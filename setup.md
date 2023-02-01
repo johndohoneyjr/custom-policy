@@ -12,7 +12,7 @@ RESOURCE_GROUP="customerName-Product-idNumber"
 
 2. Create a service principal
 
-az login
+az login --use-device-code
 
 ## Subscription Level Scope
 az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Contributor --scopes /subscriptions/$SUBSCRIPTION_ID  --sdk-auth > sp.json
