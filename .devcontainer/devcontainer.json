@@ -63,8 +63,8 @@
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	//"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
-    
-  "postCreateCommand": "pip3 install --user -r requirements.txt"
+	"postCreateCommand": "/bin/bash ./.devcontainer/post-install.sh",
+        "postCreateCommand": "pip3 install --user -r requirements.txt"
   
 	// Use 'postStartCommand' to run commands after the container starts.
 	//"postStartCommand": "/bin/bash -c .devcontainer/post-start.sh"
