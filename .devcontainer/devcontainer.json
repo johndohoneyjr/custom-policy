@@ -1,0 +1,71 @@
+{
+	"name": "Utility-Codespace",
+	"dockerFile": "Dockerfile",
+
+	// do not change these if you want Docker in Docker support
+	// "runArgs": ["--init", "--privileged"],
+	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
+	// "overrideCommand": false,
+
+	// some base images require a specific user name
+	//"remoteUser": "hackfest",
+
+	// Set container specific settings
+	"settings": {
+		"terminal.integrated.defaultProfile.linux": "zsh"
+	},
+
+	// "hostRequirements": {
+	// 	"cpus": 4
+	// },
+	
+	//forward ports for the app
+	// "forwardPorts": [
+	// ],
+
+	//add labels
+	// "portsAttributes": {
+	// },
+	// Set *default* container specific settings.json values on container create.
+	"settings": { 
+		"python.pythonPath": "/usr/local/bin/python",
+		"python.languageServer": "Pylance",
+		"python.linting.enabled": true,
+		"python.linting.pylintEnabled": true,
+		"python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
+		"python.formatting.blackPath": "/usr/local/py-utils/bin/black",
+		"python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
+		"python.linting.banditPath": "/usr/local/py-utils/bin/bandit",
+		"python.linting.flake8Path": "/usr/local/py-utils/bin/flake8",
+		"python.linting.mypyPath": "/usr/local/py-utils/bin/mypy",
+		"python.linting.pycodestylePath": "/usr/local/py-utils/bin/pycodestyle",
+		"python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
+		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
+		"editor.fontSize": 18
+	},
+	// Install extensions
+	"extensions": [
+    "streetsidesoftware.code-spell-checker",
+		"ms-python.python",
+		"ms-python.vscode-pylance",
+		"ms-dotnettools.csharp",
+		"ms-azuretools.vscode-docker",
+		"ms-kubernetes-tools.vscode-kubernetes-tools",
+		"davidanson.vscode-markdownlint",
+		"gruntfuggly.todo-tree",
+		"mutantdino.resourcemonitor",
+		"humao.rest-client"
+	],
+
+	// Use 'onCreateCommand' to run commands as part of container creation.
+	//"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	//"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
+    
+  "postCreateCommand": "pip3 install --user -r requirements.txt"
+  
+	// Use 'postStartCommand' to run commands after the container starts.
+	//"postStartCommand": "/bin/bash -c .devcontainer/post-start.sh"
+
+}
