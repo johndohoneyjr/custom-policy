@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "displayName": "222-Allowed SCE locations",
+    "policyType": "Custom",
+    "description": "This policy restricts the non-resource group locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements.",
+    "parameters": {
+      "listOfAllowedLocations": {
+        "type": "Array",
+        "metadata": {
+          "description": "The list of locations that can be specified when deploying resources.",
+          "strongType": "location",
+          "displayName": "Allowed locations"
+        },
+        "allowedValues": [
+            "westus",
+            "westus3",
+            "eastus"
+        ],
+        "defaultValue": ["eastus","westus"]
+      }
+    },
+    "policyRule": {
+      "if": {
+        "not": {
+          "field": "location",
+          "in": "[parameters('listOfAllowedLocations')]"
+        }
+      },
+      "then": {
+        "effect": "Deny"
+      }
+    }
+  }
+}

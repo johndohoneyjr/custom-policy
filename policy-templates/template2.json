@@ -1,0 +1,56 @@
+{
+	"properties": {
+		"displayName": "777 Allowed SKUs",
+		"description": "Establishes a list of Forbidden SKUs",
+		"parameters": {
+			"effect": {
+				"type": "String",
+				"metadata": {
+					"displayName": "Effect",
+					"description": "Enable, Audit or disable the execution of the policy"
+				},
+				"allowedValues": [
+					"Audit",
+					"Disabled",
+					"Deny"
+				],
+				"defaultValue": "Audit"
+			},
+			"listOfAllowedLocations": {
+				"type": "Array",
+				"metadata": {
+					"description": "The list of locations that resource groups can be created in.",
+					"strongType": "location",
+					"displayName": "Allowed locations"
+				}
+			},
+			"listOfAllowedSKUs": {
+				"type": "Array",
+				"metadata": {
+					"description": "The list of SKUs NOT Allowed",
+					"displayName": "Forbidden SKUs names"
+				}
+			}
+		},
+		"policyRule": {
+			"if": {
+				"allOf": [{
+						"field": "type",
+						"equals": "Microsoft.CognitiveServices/accounts"
+					},
+					{
+						"field": "Microsoft.CognitiveServices/accounts/sku.name",
+						"notIn": "[parameters('listOfAllowedSKUs')]"
+					},
+					{
+						"field": "location",
+						"notIn": "[parameters('listOfAllowedLocations')]"
+					}
+				]
+			},
+			"then": {
+				"effect": "[parameters('effect')]"
+			}
+		}
+	}
+}

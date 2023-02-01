@@ -1,0 +1,7 @@
+pip install azure-identity
+pip install azure-mgmt-policyinsights
+pip install azure-mgmt-resource
+pip install azure-cli-core
+pip install azure.identity
+pip install requests
+pip install json
