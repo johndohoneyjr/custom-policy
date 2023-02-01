@@ -3,7 +3,7 @@
 		"SKU_URI": "",
 		"excludeSKU": [],
 		"excludeAction": "deny",
-		"RuleName": "100-SCE-ALLOWED-RESOURCEGROUP-LOCATIONS",
+		"RuleName": "100-VMWare-ALLOWED-RESOURCE-GROUP-LOCATIONS",
 		"AzureRegions": ["West US", "West US 2", "West US 3"],
 		"Parameters": {},
 		"Rule": {
@@ -14,7 +14,7 @@
 				"description": "This policy enables you to restrict the locations your organization can create resource groups in. Use to enforce your geo-compliance requirements.",
 				"metadata": {
 					"version": "1.0.0",
-					"category": "SoCal Edison"
+					"category": "VMWare"
 				},
 				"parameters": {
 					"listOfAllowedLocations": {
@@ -49,7 +49,7 @@
 		"SKU_URI": "",
 		"excludeSKU": [],
 		"excludeAction": "deny",
-		"RuleName": "150-SCE-ALLOWED-LOCATIONS",
+		"RuleName": "150-VMWare-ALLOWED-LOCATIONS",
 		"AzureRegions": ["West US", "West US 2", "West US 3"],
 		"Parameters": {},
 		"Rule": {
@@ -60,7 +60,7 @@
 				"description": "This policy restricts the locations your organization can specify when deploying resources. Use to enforce your geo-compliance requirements.",
 				"metadata": {
 					"version": "1.0.0",
-					"category": "SoCal Edison"
+					"category": "VMWare"
 				},
 				"parameters": {
 					"listOfAllowedLocations": {
@@ -92,19 +92,19 @@
 		"SKU_URI": "https://management.azure.com/subscriptions/ + Subscription_ID + /providers/Microsoft.CognitiveServices/skus?api-version=2021-10-01",
 		"excludeSKU": ["Standard", "Premium"],
 		"excludeAction": "deny",
-		"RuleName": "200-SCE-DENY-COGNITIVE-SCIENCE-APIS",
+		"RuleName": "200-VMWare-DENY-COGNITIVE-SCIENCE-APIS",
 		"NormalizedRegions": ["WESTUS", "WESTUS2", "WESTUS3"],
 		"AzureRegions": ["West US", "West US 2", "West US 3"],
 		"Parameters": {},
 		"Rule": {
 			"properties": {
-				"displayName": "200-SCE-DENY-COGNITIVE-SCIENCE-APIS",
+				"displayName": "200-VMWare-DENY-COGNITIVE-SCIENCE-APIS",
 				"description": "Establishes a list of Forbidden SKUs",
 				"mode": "All",
 				"policyType": "Custom",
 				"metadata": {
 					"version": "1.0.0",
-					"category": "SoCal Edison"
+					"category": "VMWare"
 				},
 				"parameters": {
 					"DisAllowedSKUs": {
