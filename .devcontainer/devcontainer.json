@@ -21,7 +21,7 @@
 		"PT_TENANT_ID": "${localEnv:PT_TENANT_ID}",
 		"PT_CLIENT_ID": "${localEnv:PT_CLIENT_ID}",
 		"PT_CLIENT_SECRET": "${localEnv:PT_CLIENT_SECRET}",
-		"PT_RESOURCE_URL": "${localEnv:PT_RESOURCE_URL}",
+		"PT_RESOURCE_URL": "${localEnv:PT_RESOURCE_URL}"
 	}
 	// "hostRequirements": {
 	// 	"cpus": 4
