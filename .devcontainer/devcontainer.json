@@ -1,7 +1,9 @@
 {
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
-
+	"features": {
+	  "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {}
+	},
 	"remoteEnv": {
 		// Use a GitHub Codespaces secret:
 		"PT_SUBSCRIPTION_ID": "${localEnv:PT_SUBSCRIPTION_ID}",
