@@ -158,6 +158,10 @@
 				"policyType": "Custom",
 				"mode": "Microsoft.Kubernetes.Data",
 				"description": "This policy enforces that all pods have a readiness and/or liveness probes configured. Probe Types can be any of tcpSocket, httpGet and exec. This policy is generally available for Kubernetes Service (AKS), and preview for Azure Arc enabled Kubernetes. For instructions on using this policy, visit https://aka.ms/kubepolicydoc.",
+				"metadata": {
+					"version": "1.0.0",
+					"category": "VMWare"
+				},
 				"parameters": {
 					"effect": {
 						"type": "String",
