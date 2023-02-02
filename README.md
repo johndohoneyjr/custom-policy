@@ -17,3 +17,7 @@ The next level is the actual location of a resource within a resource group.  On
 #### Feature Level
 
 For demonstration of this concept, Two features were created.  First an example with Start Probes being required on a Manifest in Kubernetes.  Second, Behavioral Science API's were selected--same idea as OpenAI.  Essentially, the resource SKU's were scanned having the values of [Free, Standard, and Premium].  Only Free SKU's were enabled.  The idea here is the team is not going to break the OPEX Budget using ChatGPT to answer emails or write poems to co-workers.
+
+### To be done
+Code Space - devcontainer.json - Map env vars to environment in my computer
+Assign the policy -- need to come up with a way to set variables and set exclusions on REST call -- just more homework
