@@ -29,6 +29,7 @@ The output file, sp.json is convenient to later parse to set up your environment
 # https://stedolan.github.io/jq/download
 
 # Handy BASH command to verify existence of a file (jq in this case)
+
 command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq for this script, but it's not installed, download jq at: https://stedolan.github.io/jq/download/.  Aborting."; exit 1; }
 
 
