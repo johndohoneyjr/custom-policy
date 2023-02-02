@@ -2,7 +2,7 @@
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
 
-	"features":{"ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {} },
+	"features":{},
 	"settings": { 
 		"terminal.integrated.defaultProfile.linux": "zsh",
 		"python.pythonPath": "/usr/local/bin/python",
