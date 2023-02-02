@@ -1,8 +1,10 @@
 # Azure Policy
 
-## The big idea is to constrain the provisioning limits on Azure, by setting up well defined parameters for resource creation using the Azure Resource Manager
+## The big idea is to constrain the provisioning limits on Azure and Kuberneter, by setting up well defined parameters for resource creation using the Azure Resource Manager
 
-The tool is driven by a configuration file.  Values can be added to the definition, without fear of breaking the code.  However, any update/change or delete will have to be vetted against the code, as the JSON configuration is "cast" into a Python Dictionary to address aspects of the configuration.
+The tool is driven by a configuration file (Json maps nicely into Python Dictionaries).  Values can be added to the definition, without fear of breaking the code.  However, any update/change or delete will have to be vetted against the code, as the JSON configuration is "cast" into a Python Dictionary to address aspects of the configuration.
+
+The initial focus of this tool was for Custom Kubernetes, but it can be a whole lot more.  I used one example to limit SKU's at the actual resource level -- figured everyone and their brother is going to be playing with OpenAI.  So, I used Cogntive Science APIs as a working example.
 
 ### Resource Group Level
 
@@ -14,4 +16,4 @@ The next level is the actual location of a resource within a resource group.  On
 
 #### Feature Level
 
-For demonstration of this concept, Behavioral Science API's were selected.  Essentially, the resource SKU's were scanned having the values of [Free, Standard, and Premium].  Only Free SKU's were enabled.
+For demonstration of this concept, Two features were created.  First an example with Start Probes being required on a Manifest in Kubernetes.  Second, Behavioral Science API's were selected--same idea as OpenAI.  Essentially, the resource SKU's were scanned having the values of [Free, Standard, and Premium].  Only Free SKU's were enabled.  The idea here is the team is not going to break the OPEX Budget using ChatGPT to answer emails or write poems to co-workers.
