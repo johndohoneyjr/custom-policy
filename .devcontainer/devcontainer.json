@@ -2,11 +2,6 @@
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
 
-	// Set container specific settings
-	"settings": {
-		"terminal.integrated.defaultProfile.linux": "zsh"
-	},
-
 	"remoteEnv": {
 		// Use a GitHub Codespaces secret:
 		"PT_SUBSCRIPTION_ID": "${localEnv:PT_SUBSCRIPTION_ID}",
@@ -17,6 +12,7 @@
 	},
 		
 	"settings": { 
+		"terminal.integrated.defaultProfile.linux": "zsh",
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.languageServer": "Pylance",
 		"python.linting.enabled": true,
