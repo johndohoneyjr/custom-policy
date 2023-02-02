@@ -2,7 +2,13 @@
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
 
-	"features":{},
+	"features": {
+    		"terraform": {
+        		"version": "latest",
+        		"tflint": "latest",
+        		"terragrunt": "latest"
+    		}
+	},
 	"settings": { 
 		"terminal.integrated.defaultProfile.linux": "zsh",
 		"python.pythonPath": "/usr/local/bin/python",
