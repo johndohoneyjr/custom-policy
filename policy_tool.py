@@ -94,6 +94,13 @@ if __name__ == '__main__':
     bearer_token = oauth_client_credential();
 
     #
+    # Kubernetes Start Probes Policy
+    #
+    my_result = Policy_Definition( bearer_token, 
+                                   POLICY_CFG['StartProbes']['RuleName'], 
+                                   POLICY_CFG['StartProbes']['Rule'])
+
+    #
     # Resource Group Location Policy
     #
     if  POLICY_CFG['ResourceGroupLocation']['AzureRegions']:
