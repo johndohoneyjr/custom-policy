@@ -2,12 +2,8 @@
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
 
-	"env": {
-          "PT_SUBSCRIPTION_ID": "${process.env.PT_SUBSCRIPTION_ID}",
-          "PT_CLIENT_ID": "${process.env.PT_CLIENT_ID}"
-         },
-
-		
+	"features":{"ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {},
+		    "ghcr.io/devcontainers-contrib/features/mongosh-homebrew:1": {} },
 	"settings": { 
 		"terminal.integrated.defaultProfile.linux": "zsh",
 		"python.pythonPath": "/usr/local/bin/python",
