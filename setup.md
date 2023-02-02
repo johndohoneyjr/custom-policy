@@ -15,10 +15,11 @@ RESOURCE_GROUP="customerName-Product-idNumber"
 az login --use-device-code
 
 ## Subscription Level Scope
-az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Contributor --scopes /subscriptions/$SUBSCRIPTION_ID  --sdk-auth > sp.json
+az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Contributor --scopes /subscriptions/$SUBSCRIPTION_ID  > sp.json
+
+az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Contributor --scopes /subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP  > sp.json
 
 ## Resource Group Level Scope
-az ad sp create-for-rbac --name $SERVICE_PRINCIPAL_NAME --role Contributor --scopes /subscriptions/$SUBSCRIPTION_ID/resourceGroups/$RESOURCE_GROUP  --sdk-auth > sp.json
 
 The output file, sp.json is convenient to later parse to set up your environment that you will need for authentication
 
@@ -31,7 +32,26 @@ The output file, sp.json is convenient to later parse to set up your environment
 command -v jq >/dev/null 2>&1 || { echo >&2 "I require jq for this script, but it's not installed, download jq at: https://stedolan.github.io/jq/download/.  Aborting."; exit 1; }
 
 
-export PT_CLIENT_ID=$(cat sp.json | jq -r .clientId)
-export PT_CLIENT_SECRET=$(cat sp.json | jq -r .clientId)
+export PT_CLIENT_ID=$(cat sp.json | jq -r .appId)
+export PT_CLIENT_SECRET=$(cat sp.json | jq -r .password)
 export PT_RESOURCE_URL=$(cat sp.json | jq -r .clientId)
-export PT_TENANT_ID=$(cat sp.json | jq -r .clientId)
+export PT_TENANT_ID=$(cat sp.json | jq -r .tenant)
+
+### Service Principal Roles
+
+Since this demo created a Service Principal at the Subscription Level, IAM will need to be accessed at that level and assigned the following two roles:
+  1. Azure Kubernetes Service Policy Add-on
+  2. Resource Policy Contributor
+
+
+
+
+
+
+
+
+
+
+
+
+
