@@ -2,14 +2,6 @@
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
 
-	// do not change these if you want Docker in Docker support
-	// "runArgs": ["--init", "--privileged"],
-	// "mounts": [ "source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind" ],
-	// "overrideCommand": false,
-
-	// some base images require a specific user name
-	//"remoteUser": "hackfest",
-
 	// Set container specific settings
 	"settings": {
 		"terminal.integrated.defaultProfile.linux": "zsh"
@@ -22,19 +14,8 @@
 		"PT_CLIENT_ID": "${localEnv:PT_CLIENT_ID}",
 		"PT_CLIENT_SECRET": "${localEnv:PT_CLIENT_SECRET}",
 		"PT_RESOURCE_URL": "${localEnv:PT_RESOURCE_URL}"
-	}
-	// "hostRequirements": {
-	// 	"cpus": 4
-	// },
-	
-	//forward ports for the app
-	// "forwardPorts": [
-	// ],
-
-	//add labels
-	// "portsAttributes": {
-	// },
-	// Set *default* container specific settings.json values on container create.
+	},
+		
 	"settings": { 
 		"python.pythonPath": "/usr/local/bin/python",
 		"python.languageServer": "Pylance",
@@ -53,7 +34,7 @@
 	},
 	// Install extensions
 	"extensions": [
-    "streetsidesoftware.code-spell-checker",
+                "streetsidesoftware.code-spell-checker",
 		"ms-python.python",
 		"ms-python.vscode-pylance",
 		"hashicorp.terraform",
@@ -66,14 +47,5 @@
 		"humao.rest-client"
 	],
 
-	// Use 'onCreateCommand' to run commands as part of container creation.
-	//"onCreateCommand": "/bin/bash -c .devcontainer/on-create.sh",
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	//"postCreateCommand": "/bin/bash -c .devcontainer/post-create.sh",
         "postCreateCommand": "pip3 install --user -r requirements.txt"
-  
-	// Use 'postStartCommand' to run commands after the container starts.
-	//"postStartCommand": "/bin/bash -c .devcontainer/post-start.sh"
-
 }
