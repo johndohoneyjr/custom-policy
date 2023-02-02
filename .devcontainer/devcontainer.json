@@ -1,17 +1,12 @@
 {
 	"name": "Utility-Codespace",
 	"dockerFile": "Dockerfile",
-	"features": {
-	  "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {}
-	},
-	"remoteEnv": {
-		// Use a GitHub Codespaces secret:
-		"PT_SUBSCRIPTION_ID": "${localEnv:PT_SUBSCRIPTION_ID}",
-		"PT_TENANT_ID": "${localEnv:PT_TENANT_ID}",
-		"PT_CLIENT_ID": "${localEnv:PT_CLIENT_ID}",
-		"PT_CLIENT_SECRET": "${localEnv:PT_CLIENT_SECRET}",
-		"PT_RESOURCE_URL": "${localEnv:PT_RESOURCE_URL}"
-	},
+
+	"env": {
+          "PT_SUBSCRIPTION_ID": "${process.env.PT_SUBSCRIPTION_ID}",
+          "PT_CLIENT_ID": "${process.env.PT_CLIENT_ID}"
+         },
+
 		
 	"settings": { 
 		"terminal.integrated.defaultProfile.linux": "zsh",
@@ -30,7 +25,7 @@
 		"python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
 		"editor.fontSize": 18
 	},
-	// Install extensions
+		
 	"extensions": [
                 "streetsidesoftware.code-spell-checker",
 		"ms-python.python",
